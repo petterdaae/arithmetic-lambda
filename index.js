@@ -43,7 +43,6 @@ module.exports.handler = async (event, context) => {
 
     default:
       return clientError("Invalid operation")
-
   }
 
   return {

@@ -1,6 +1,5 @@
 # arithmetic-lambda
 
-## Terraform
-
-The `/terraform` folder contains the necessary infrastructure. It is also used to deploy new versions of the lambda.
+- `/terraform` contains the necessary infrastructure. It is also used to deploy new versions of the lambda.
+- `index.js` contains the actual lambda code.
 
