@@ -1,3 +1,3 @@
-module.exports.handler = (event, context) => {
-  return "Hello world!"
+module.exports.handler = async (event, context) => {
+  return "Hello world!\n"
 }

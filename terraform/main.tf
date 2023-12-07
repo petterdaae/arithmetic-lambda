@@ -41,6 +41,11 @@ resource "aws_lambda_function" "this" {
   source_code_hash = data.archive_file.this.output_base64sha256
 }
 
+resource "aws_lambda_function_url" "this" {
+  function_name      = aws_lambda_function.this.function_name
+  authorization_type = "NONE"
+}
+
 data "archive_file" "this" {
   type        = "zip"
   source_file = "${path.module}/../index.js"
