@@ -15,7 +15,20 @@ function clientError(message) {
   }
 }
 
+function validEvent(event) {
+  return event
+    && event.body
+    && event.method == "POST"
+    && typeof event.body.operation === 'string'
+    && typeof event.body.left === 'number'
+    && typeof event.body.right === 'number';
+}
+
 module.exports.handler = async (event, context) => {
+  if (!validEvent(event)) {
+    return clientError("Invalid request");
+  }
+
   const body = parseBody(event);
 
   const operation = body.operation;
