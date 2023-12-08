@@ -39,6 +39,11 @@ function handler(event) {
 
   return {
     statusCode: 200,
+    headers: {
+      "content-type": {
+        "value": "application/json"
+      }
+    },
     body: {
       encoding: "text",
       data: JSON.stringify({
