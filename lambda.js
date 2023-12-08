@@ -16,14 +16,14 @@ function clientError(message) {
 }
 
 module.exports.handler = async (event, context) => {
+  let result;
+
   try {
     const body = parseBody(event);
 
     const operation = body.operation;
     const left = body.left;
     const right = body.right;
-
-    let result = null;
 
     switch (operation) {
       case "ADD":
@@ -50,7 +50,6 @@ module.exports.handler = async (event, context) => {
   }
 
   return {
-    request: { operation, left, right },
     result
   }
 }
